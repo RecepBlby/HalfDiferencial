@@ -1,0 +1,11 @@
+`timescale 1ns / 1ps
+module HalfDif(x,y,dif,borrow);
+input x,y;
+output dif,borrow;
+reg dif,borrow;
+always@(x,y)
+begin
+ dif = x ^ y;
+ borrow = ~x & y;
+end
+endmodule
